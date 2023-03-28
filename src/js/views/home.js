@@ -19,8 +19,8 @@ export const Home = () => {
 
 
 	return(
-		<div className="text-center mt-5">
-			<ul>
+		<div className="text-center mt-5 container">
+			<ul className="row card-column">
 			{
 				store.contactList.map((contact) => (
 					<Contact key={contact.id} element={contact}/>

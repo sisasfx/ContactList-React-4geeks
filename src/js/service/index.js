@@ -10,11 +10,18 @@ export async function getMikeOrtizAgenda(){
 }
 
 export async function postContact(newContact){
+    console.log("Desde el service",newContact)
     try{
-        await fetch(`${URL}`, {method: "POST", body: JSON.stringify(newContact), headers: {"Content-Type" : "application/json"}}
-        )
+        await fetch(`${URL}`, {method: "POST", body: JSON.stringify(newContact), headers: {"Content-Type" : "application/json"}, redirect:"follow"})
+        .then(req => {
+            console.log(req)
+            if(req.ok){
+                getMikeOrtizAgenda()
+            }
+            else{console.log("CAGADA PASTORET", req.statusText)}
+        })
     }catch(err){
-        console.log(err)
+        console.log("En el catch del POST-->",err)
     }
 }
 

@@ -14,7 +14,7 @@ const Contact = ({element}) => {
 	}
 
     return(
-        <li key={element.id}>
+        <li key={element.id} className="liDelContact">
 			<p><strong>{element.full_name}</strong></p>
 			<div>
 				<p>Phone: {element.phone}</p>

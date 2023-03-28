@@ -9,7 +9,7 @@ export const Navbar = () => {
 
 
 	return (
-		<div>
+		<div className="navbar">
 			<Link to={"/form/create"}>
 				<h1>Add Contact</h1>
 			</Link>

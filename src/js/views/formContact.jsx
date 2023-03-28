@@ -31,8 +31,7 @@ const FormContact = () => {
             }
         }*/
         setState({...state , [e.target.name] : e.target.value }) 
-        console.log(state)         
-        //actions.addContact(e.target.value);
+        console.log(state)
     }
 
     const crearContacto = (e) =>{
@@ -40,7 +39,8 @@ const FormContact = () => {
         if(type === "edit"){
             editContact(state)
         }else{
-            postContact(objetoParaGuardar)
+            console.log("Creando el contacto")
+           postContact(state)
         }   
     }
 
